@@ -1,7 +1,6 @@
 import { motion } from "motion/react";
 import { ArrowRight, Sparkles, MapPin, Zap, Wrench, Users } from "lucide-react";
 import { HeroDashboard } from "./HeroDashboard";
-import heroBg from "@/assets/hero-bg.jpg";
 
 const trust = [
   { icon: MapPin, label: "Based in Ahmedabad" },
@@ -13,13 +12,8 @@ const trust = [
 export function Hero() {
   return (
     <section id="home" className="relative pt-32 pb-20 overflow-hidden">
-      <div
-        className="absolute inset-0 pointer-events-none bg-cover bg-center opacity-80"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background pointer-events-none" />
       <div className="absolute inset-0 bg-gradient-hero pointer-events-none" />
-      <div className="absolute inset-0 grid-pattern opacity-20 [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_70%)]" />
+      <div className="absolute inset-0 grid-pattern opacity-40 [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_70%)]" />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
         <motion.div
