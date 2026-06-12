@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { ArrowRight, Sparkles, MapPin, Zap, Wrench, Users } from "lucide-react";
 import { HeroDashboard } from "./HeroDashboard";
+import heroBg from "@/assets/hero-bg.jpg";
 
 const trust = [
   { icon: MapPin, label: "Based in Ahmedabad" },
