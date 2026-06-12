@@ -1,29 +1,52 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Navbar } from "@/components/site/Navbar";
+import { Hero } from "@/components/site/Hero";
+import { Metrics } from "@/components/site/Metrics";
+import { Services } from "@/components/site/Services";
+import { WhyUs } from "@/components/site/WhyUs";
+import { Work } from "@/components/site/Work";
+import { Testimonials } from "@/components/site/Testimonials";
+import { FAQ } from "@/components/site/FAQ";
+import { ContactSection } from "@/components/site/ContactSection";
+import { FinalCTA } from "@/components/site/FinalCTA";
+import { Footer } from "@/components/site/Footer";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "Windblow — AI Automation Agency in Ahmedabad" },
+      {
+        name: "description",
+        content:
+          "Windblow is an AI automation agency in Ahmedabad. We automate repetitive work, generate leads, and scale operations through AI, automation, and smart technology.",
+      },
+      { property: "og:title", content: "Windblow — AI Automation Agency in Ahmedabad" },
+      {
+        property: "og:description",
+        content:
+          "AI automation that gives your business time back. Workflows, chatbots, WhatsApp & Gmail automation, analytics, and integrations.",
+      },
     ],
   }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background text-foreground antialiased">
+      <Navbar />
+      <main>
+        <Hero />
+        <Metrics />
+        <Services />
+        <WhyUs />
+        <Work />
+        <Testimonials />
+        <FAQ />
+        <ContactSection />
+        <FinalCTA />
+      </main>
+      <Footer />
     </div>
   );
 }
