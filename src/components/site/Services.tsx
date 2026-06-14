@@ -1,102 +1,66 @@
 import { motion } from "motion/react";
-import { Brain, Layers, TrendingUp, ArrowRight, Check } from "lucide-react";
-
-const services = [
-  {
-    icon: Brain,
-    title: "AI Automation",
-    description:
-      "Automate repetitive tasks, improve customer communication, and build intelligent systems that work around the clock.",
-    items: [
-      "AI Workflow Automations",
-      "AI Chatbots",
-      "AI Receptionists",
-      "WhatsApp Automation",
-      "Gmail Automation",
-      "AI Content Creation",
-      "Social Media Automation",
-      "Automated Reporting & Insights",
-    ],
-  },
-  {
-    icon: Layers,
-    title: "Technology Solutions",
-    description:
-      "Build strong digital foundations with websites, integrations, and business systems.",
-    items: [
-      "Website Optimization",
-      "Marketing Automation",
-      "Ecommerce Development",
-      "Systems Integration",
-      "API Integration",
-      "Analytics Setup",
-      "CRM Pipelines",
-    ],
-  },
-  {
-    icon: TrendingUp,
-    title: "Marketing Growth",
-    description:
-      "Generate awareness, leads, and revenue using proven marketing strategies.",
-    items: [
-      "Paid Advertising",
-      "SEO",
-      "Local SEO",
-      "Branding",
-      "Creative Design",
-      "Influencer Marketing",
-      "Public Relations",
-    ],
-  },
-];
+import { Link } from "@tanstack/react-router";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { HOMEPAGE_SERVICE_SLUGS, getService } from "@/lib/services-data";
 
 export function Services() {
+  const featured = HOMEPAGE_SERVICE_SLUGS.map(getService).filter(
+    (s): s is NonNullable<ReturnType<typeof getService>> => Boolean(s),
+  );
+
   return (
     <section id="services" className="py-24 relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="max-w-2xl mb-16">
-          <div className="text-xs uppercase tracking-widest text-brand mb-3">What We Do</div>
+        <div className="max-w-2xl mb-14">
+          <div className="text-xs uppercase tracking-widest text-brand mb-3">Our Services</div>
           <h2 className="text-3xl md:text-5xl font-semibold mb-4">
-            Practical AI built for <span className="text-gradient">real business growth</span>
+            Specialised solutions to <span className="text-gradient">automate, optimize, and grow</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            Practical AI, technology, and marketing solutions designed to help businesses grow with
-            less manual work.
+            Explore specialized solutions designed to automate, optimize, and grow your business —
+            across AI, technology, marketing, and operations.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {services.map((s, i) => (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {featured.map((s, i) => (
             <motion.div
-              key={s.title}
-              initial={{ opacity: 0, y: 30 }}
+              key={s.slug}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="group relative glass rounded-2xl p-7 flex flex-col hover:border-brand/40 transition-all"
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ delay: (i % 3) * 0.06, duration: 0.45 }}
+              className="group relative rounded-2xl p-[1px] bg-gradient-to-br from-white/10 via-white/5 to-transparent hover:from-brand/40 hover:via-brand/10 transition-colors"
             >
-              <div className="absolute inset-0 bg-gradient-brand opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity" />
-              <div className="w-12 h-12 rounded-xl bg-gradient-brand/20 border border-brand/30 flex items-center justify-center mb-5 relative">
-                <s.icon className="w-6 h-6 text-brand" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2 relative">{s.title}</h3>
-              <p className="text-sm text-muted-foreground mb-5 relative">{s.description}</p>
-              <ul className="space-y-2 mb-6 relative flex-1">
-                {s.items.map((it) => (
-                  <li key={it} className="flex items-start gap-2 text-sm">
-                    <Check className="w-4 h-4 text-brand mt-0.5 shrink-0" />
-                    <span className="text-foreground/80">{it}</span>
-                  </li>
-                ))}
-              </ul>
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 text-sm font-medium text-brand hover:gap-3 transition-all relative"
+              <Link
+                to="/services/$slug"
+                params={{ slug: s.slug }}
+                className="relative flex flex-col h-full glass rounded-2xl p-6 overflow-hidden"
               >
-                Learn More <ArrowRight className="w-4 h-4" />
-              </a>
+                <div className="absolute inset-0 bg-gradient-brand opacity-0 group-hover:opacity-[0.06] transition-opacity rounded-2xl" />
+                <div className="flex items-start justify-between mb-5 relative">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-brand/20 border border-brand/30 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <s.icon className="w-6 h-6 text-brand" />
+                  </div>
+                  <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-brand group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" />
+                </div>
+                <h3 className="text-lg font-semibold mb-2 relative">{s.title}</h3>
+                <p className="text-sm text-muted-foreground mb-5 relative flex-1">{s.short}</p>
+                <div className="inline-flex items-center gap-1.5 text-sm font-medium text-brand relative">
+                  Learn More <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </Link>
             </motion.div>
           ))}
+        </div>
+
+        <div className="mt-12 flex justify-center">
+          <Link
+            to="/services"
+            className="inline-flex items-center gap-2 h-12 px-6 rounded-xl glass border border-border hover:border-brand/40 text-sm font-medium transition-colors"
+          >
+            View all services <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </div>
     </section>
