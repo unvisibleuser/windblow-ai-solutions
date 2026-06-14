@@ -105,7 +105,7 @@ function ServicePage() {
               </p>
             </div>
             <div className="md:col-span-2 grid sm:grid-cols-2 gap-4">
-              {service.benefits.map((b) => (
+              {service.benefits.map((b: string) => (
                 <div key={b} className="glass rounded-xl p-5 flex items-start gap-3">
                   <div className="w-8 h-8 rounded-lg bg-brand/15 flex items-center justify-center shrink-0">
                     <Check className="w-4 h-4 text-brand" />
