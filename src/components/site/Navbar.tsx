@@ -108,15 +108,24 @@ export function Navbar() {
       {/* Desktop Mega Menu */}
       <AnimatePresence>
         {megaOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2, ease: "easeOut" }}
-            onMouseEnter={openMega}
-            onMouseLeave={scheduleClose}
-            className="hidden md:block absolute left-0 right-0 top-16 px-6 lg:px-8"
-          >
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              onMouseEnter={scheduleClose}
+              className="hidden md:block fixed inset-0 top-16 bg-background/70 backdrop-blur-sm -z-10 pointer-events-none"
+            />
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              onMouseEnter={openMega}
+              onMouseLeave={scheduleClose}
+              className="hidden md:block absolute left-0 right-0 top-16 px-6 lg:px-8"
+            >
             <div className="max-w-7xl mx-auto glass border border-border rounded-2xl shadow-2xl overflow-hidden">
               <div className="grid grid-cols-12 gap-6 p-8">
                 <div className="col-span-9 grid grid-cols-4 gap-6">
@@ -191,7 +200,8 @@ export function Navbar() {
                 </Link>
               </div>
             </div>
-          </motion.div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
 
