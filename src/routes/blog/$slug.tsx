@@ -85,7 +85,7 @@ function BlogPost() {
         {/* Body */}
         <article className="py-16">
           <div className="max-w-3xl mx-auto px-6 lg:px-8 prose-content">
-            {post.content.map((para, i) => (
+            {post.content.map((para: string, i: number) => (
               <p
                 key={i}
                 className="text-lg leading-relaxed text-foreground/90 mb-6"
