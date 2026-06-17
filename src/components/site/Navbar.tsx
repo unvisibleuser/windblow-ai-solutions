@@ -7,9 +7,9 @@ import { SERVICE_CATEGORIES } from "@/lib/services-data";
 const links: Array<{ label: string; href?: string; to?: string; mega?: boolean }> = [
   { label: "Home", to: "/" },
   { label: "Services", mega: true },
-  { label: "About", href: "/#about" },
+  { label: "About", to: "/about" },
   { label: "Blog", href: "/#blog" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Contact", to: "/contact" },
 ];
 
 export function Navbar() {
@@ -92,12 +92,12 @@ export function Navbar() {
         </div>
 
         <div className="hidden md:flex items-center gap-3">
-          <a
-            href="/#contact"
+          <Link
+            to="/contact"
             className="inline-flex items-center justify-center h-10 px-5 rounded-lg bg-gradient-brand text-primary-foreground text-sm font-medium shadow-glow hover:opacity-90 transition"
           >
             Book a Call
-          </a>
+          </Link>
         </div>
 
         <button className="md:hidden text-foreground" onClick={() => setOpen(!open)} aria-label="Menu">
@@ -238,26 +238,26 @@ export function Navbar() {
               </Link>
             </div>
           </div>
-          <a href="/#about" onClick={() => setOpen(false)} className="text-sm text-muted-foreground">
+          <Link to="/about" onClick={() => setOpen(false)} className="text-sm text-muted-foreground">
             About
-          </a>
+          </Link>
           <a href="/#blog" onClick={() => setOpen(false)} className="text-sm text-muted-foreground">
             Blog
           </a>
-          <a
-            href="/#contact"
+          <Link
+            to="/contact"
             onClick={() => setOpen(false)}
             className="text-sm text-muted-foreground"
           >
             Contact
-          </a>
-          <a
-            href="/#contact"
+          </Link>
+          <Link
+            to="/contact"
             onClick={() => setOpen(false)}
             className="inline-flex items-center justify-center h-10 px-5 rounded-lg bg-gradient-brand text-primary-foreground text-sm font-medium"
           >
             Book a Call
-          </a>
+          </Link>
         </div>
       )}
     </motion.header>
