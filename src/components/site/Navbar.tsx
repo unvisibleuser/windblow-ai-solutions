@@ -8,7 +8,7 @@ const links: Array<{ label: string; href?: string; to?: string; mega?: boolean }
   { label: "Home", to: "/" },
   { label: "Services", mega: true },
   { label: "About", to: "/about" },
-  { label: "Blog", href: "/#blog" },
+  { label: "Blog", to: "/blog" },
   { label: "Contact", to: "/contact" },
 ];
 
