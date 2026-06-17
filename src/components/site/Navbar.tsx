@@ -7,9 +7,9 @@ import { SERVICE_CATEGORIES } from "@/lib/services-data";
 const links: Array<{ label: string; href?: string; to?: string; mega?: boolean }> = [
   { label: "Home", to: "/" },
   { label: "Services", mega: true },
-  { label: "About", href: "/#about" },
+  { label: "About", to: "/about" },
   { label: "Blog", href: "/#blog" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Contact", to: "/contact" },
 ];
 
 export function Navbar() {
