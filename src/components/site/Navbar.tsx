@@ -8,7 +8,7 @@ const links: Array<{ label: string; href?: string; to?: string; mega?: boolean }
   { label: "Home", to: "/" },
   { label: "Services", mega: true },
   { label: "About", to: "/about" },
-  { label: "Blog", href: "/#blog" },
+  { label: "Blog", to: "/blog" },
   { label: "Contact", to: "/contact" },
 ];
 
@@ -241,9 +241,9 @@ export function Navbar() {
           <Link to="/about" onClick={() => setOpen(false)} className="text-sm text-muted-foreground">
             About
           </Link>
-          <a href="/#blog" onClick={() => setOpen(false)} className="text-sm text-muted-foreground">
+          <Link to="/blog" onClick={() => setOpen(false)} className="text-sm text-muted-foreground">
             Blog
-          </a>
+          </Link>
           <Link
             to="/contact"
             onClick={() => setOpen(false)}
