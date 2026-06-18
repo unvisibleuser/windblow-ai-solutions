@@ -93,7 +93,8 @@ export function Navbar() {
 
         <div className="hidden md:flex items-center gap-3">
           <Link
-            to="/contact"
+            to="/"
+            hash="contact"
             className="inline-flex items-center justify-center h-10 px-5 rounded-lg bg-gradient-brand text-primary-foreground text-sm font-medium shadow-glow hover:opacity-90 transition"
           >
             Book a Call
@@ -252,7 +253,8 @@ export function Navbar() {
             Contact
           </Link>
           <Link
-            to="/contact"
+            to="/"
+            hash="contact"
             onClick={() => setOpen(false)}
             className="inline-flex items-center justify-center h-10 px-5 rounded-lg bg-gradient-brand text-primary-foreground text-sm font-medium"
           >
