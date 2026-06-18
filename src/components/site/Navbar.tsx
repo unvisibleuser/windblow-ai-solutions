@@ -253,7 +253,8 @@ export function Navbar() {
             Contact
           </Link>
           <Link
-            to="/contact"
+            to="/"
+            hash="contact"
             onClick={() => setOpen(false)}
             className="inline-flex items-center justify-center h-10 px-5 rounded-lg bg-gradient-brand text-primary-foreground text-sm font-medium"
           >
