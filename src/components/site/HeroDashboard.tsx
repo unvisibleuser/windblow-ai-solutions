@@ -100,7 +100,7 @@ export function HeroDashboard() {
         </div>
       </motion.div>
 
-      {/* Floating nodes
+      {/* Floating nodes */}
       {nodes.map((n) => (
         <motion.div
           key={n.label}
@@ -117,7 +117,7 @@ export function HeroDashboard() {
           <n.icon className="w-4 h-4 text-brand" />
           <span className="text-xs font-medium">{n.label}</span>
         </motion.div>
-      ))} */}
+      ))}
     </div>
   );
 }
