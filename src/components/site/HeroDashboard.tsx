@@ -10,7 +10,7 @@ const nodes = [
 
 export function HeroDashboard() {
   return (
-    <div className="relative aspect-[5/4] w-full">
+    <div className="relative aspect-5/4 w-full">
       {/* Glow */}
       <div className="absolute -inset-3 bg-gradient-brand opacity-17 blur-3xl rounded-full" />
 
