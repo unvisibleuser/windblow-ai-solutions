@@ -20,14 +20,14 @@ import { Calendar, Clock, CheckCircle2, Loader2 } from "lucide-react";
 //      ]);
 //      return ContentService.createTextOutput(JSON.stringify({ok:true}))
 //        .setMimeType(ContentService.MimeType.JSON);
-//    }
+//    } 
 //
 // 3. Click Deploy → New deployment → Type: Web app
 //    - Execute as: Me
 //    - Who has access: Anyone
 //    Copy the Web app URL and paste it below ⬇️
 // ============================================================
-const GOOGLE_SHEETS_WEBHOOK_URL = "PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE";
+const GOOGLE_SHEETS_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbzVF8o4rnp0MrHyXxxqJADD-OjD_Q1iI5rZPAgKgl3ts1iFDvhRfmAyJncisu1JV9Ao/exec";
 // ============================================================
 
 const services = [

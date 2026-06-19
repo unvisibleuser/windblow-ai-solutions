@@ -66,11 +66,11 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-brand shrink-0" />
-                hello@windblow.ai
+                windblow.ai@gmail.com
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-brand shrink-0" />
-                +91 00000 00000
+                +91 93277 55366
               </li>
             </ul>
           </div>

@@ -125,9 +125,9 @@ export function Navbar() {
               transition={{ duration: 0.2, ease: "easeOut" }}
               onMouseEnter={openMega}
               onMouseLeave={scheduleClose}
-              className="hidden md:block absolute left-0 right-0 top-16 px-6 lg:px-8"
+              className="hidden md:block absolute left-0 right-0 top-16 px-6 lg:px-8 z-50"
             >
-            <div className="max-w-7xl mx-auto glass border border-border rounded-2xl shadow-2xl overflow-hidden">
+            <div className="max-w-7xl mx-auto glass-dark border border-border rounded-2xl shadow-2xl overflow-hidden relative z-50">
               <div className="grid grid-cols-12 gap-6 p-8">
                 <div className="col-span-9 grid grid-cols-4 gap-6">
                   {SERVICE_CATEGORIES.map((cat) => (

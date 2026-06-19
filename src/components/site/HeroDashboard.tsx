@@ -12,13 +12,13 @@ export function HeroDashboard() {
   return (
     <div className="relative aspect-[5/4] w-full">
       {/* Glow */}
-      <div className="absolute -inset-10 bg-gradient-brand opacity-20 blur-3xl rounded-full" />
+      <div className="absolute -inset-3 bg-gradient-brand opacity-17 blur-3xl rounded-full" />
 
       {/* Main dashboard card */}
       <motion.div
         animate={{ y: [0, -8, 0] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute inset-0 glass rounded-2xl p-6 shadow-glow overflow-hidden"
+        className="absolute justify-center inset-6 glass rounded-2xl p-6 shadow-glow overflow-hidden"
       >
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
@@ -101,7 +101,7 @@ export function HeroDashboard() {
       </motion.div>
 
       {/* Floating nodes */}
-      {nodes.map((n) => (
+      {/* {nodes.map((n) => (
         <motion.div
           key={n.label}
           initial={{ opacity: 0, scale: 0.5 }}
@@ -117,7 +117,7 @@ export function HeroDashboard() {
           <n.icon className="w-4 h-4 text-brand" />
           <span className="text-xs font-medium">{n.label}</span>
         </motion.div>
-      ))}
+      ))} */}
     </div>
   );
 }

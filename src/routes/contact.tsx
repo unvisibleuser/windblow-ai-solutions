@@ -26,8 +26,8 @@ export const Route = createFileRoute("/contact")({
 });
 
 const channels = [
-  { icon: Mail, label: "Email", value: "hello@windblow.in" },
-  { icon: Phone, label: "Phone", value: "+91 00000 00000" },
+  { icon: Mail, label: "Email", value: "windblow.ai@gmail.com" },
+  { icon: Phone, label: "Phone", value: "+91 93277 55366" },
   { icon: MapPin, label: "Location", value: "Ahmedabad, Gujarat, India" },
 ];
 
